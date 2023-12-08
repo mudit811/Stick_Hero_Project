@@ -25,7 +25,7 @@ public  class GameController implements Initializable {
 
 
     private AnchorPane anchorPane;
-    public GameLogic gameLogic;
+    public static GameLogic gameLogic;
 
     private double pillar_height;
     private boolean canextend=true;
@@ -36,12 +36,6 @@ public  class GameController implements Initializable {
         }
     }
 
-    public  void keyboard_mapper(KeyEvent event){
-        System.out.println("hello");
-        if(event.getCode()== KeyCode.SPACE){
-            extend();
-        }
-    }
     public void stop(){
         canextend=false;
     }

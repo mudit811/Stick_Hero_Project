@@ -43,6 +43,6 @@
          </font>
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="14.0" prefHeight="29.0" prefWidth="50.0" text="13" />
-      <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" onMousePressed="#increase_stick" opacity="0.0" prefHeight="600.0" prefWidth="335.0" text="Button" />
+      <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" opacity="0.0" prefHeight="600.0" prefWidth="335.0" text="Button" visible="false" />
    </children>
 </AnchorPane>

@@ -5,7 +5,7 @@ import javafx.scene.input.KeyEvent;
 
 public class GameLogic {
     public  void keyboard_mapper(KeyEvent event){
-        System.out.println("hello");
+        System.out.println(event.getCode());
         if(event.getCode()== KeyCode.SPACE){
             System.out.println("TRY");
 //            extend();
