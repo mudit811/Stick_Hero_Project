@@ -1,8 +1,15 @@
 package Classes;
 
-public class Stick  implements Gameobject, Appl {
-    int length;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 
+public class Stick  implements Gameobject {
+    private int length;
+    private Pane root;
+
+    public Stick(Pane root) {
+        this.root = root;
+    }
 
     public int getLength() {
         return length;
@@ -11,7 +18,8 @@ public class Stick  implements Gameobject, Appl {
     public void setLength(int length) {
         this.length = length;
     }
-    public void extendstick(event e ){
+    public void extendstick( ){
+        Rectangle stick = new Rectangle();
         System.out.println();
 
 
