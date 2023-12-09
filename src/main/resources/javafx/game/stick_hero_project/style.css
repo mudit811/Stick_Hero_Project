@@ -1,0 +1,12 @@
+#shopButton, #aboutButton, #colorButton, #soundButton {
+    background-color: transparent;
+    border-radius: 50%;
+}
+@font-face {
+    font-family: 'MyFont';
+    src: url('/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/main/fonts/Cheveuxdange.ttf');
+}
+
+.label {
+    -fx-font-family: "Cheveuxdange";
+}
