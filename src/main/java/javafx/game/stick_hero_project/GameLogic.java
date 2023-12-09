@@ -68,6 +68,28 @@ public class GameLogic {
                         KeyFrame keyFrame = new KeyFrame(Duration.millis(i * Duration.millis(5).toMillis()), sevent -> {
                             // Call your function here
                             gameController.Player_move_forward();
+                            if(gameController.Player.getLayoutX()>gameController.getNext_pillar_xcoord() || gameController.Player.getLayoutX()<50){
+                                gameController.canflip=false;
+                            }
+                            else{
+                                gameController.canflip=true;
+                            }
+                            if(gameController.flipped && gameController.Player.getLayoutX()+15>=gameController.getNext_pillar_xcoord()){
+                                System.out.println("Game Over");
+                                run_timeline.stop();
+                                Timeline fall_timeline = new Timeline();
+                                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.rotateProperty(), 300)));
+                                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.layoutYProperty(), 600)));
+                                fall_timeline.play();
+
+
+                            }
+                            if(gameController.ischerrypresent){
+                                if(gameController.flipped && gameController.Player.getLayoutX()>=gameController.cherry.getLayoutX() && gameController.Player.getLayoutX()<= gameController.cherry.getLayoutX()+gameController.cherry.getFitWidth()){
+                                    System.out.println("cherry collected");
+                                    gameController.collect_cherry();
+                                }
+                            }
 
                         });
                         run_timeline.getKeyFrames().add(keyFrame);
@@ -102,10 +124,19 @@ public class GameLogic {
                             else{
                                 gameController.canflip=true;
                             }
-                            if(gameController.flipped && gameController.Player.getLayoutX()>=gameController.getNext_pillar_xcoord()){
+                            if(gameController.flipped && gameController.Player.getLayoutX()+15>=gameController.getNext_pillar_xcoord()){
                                 System.out.println("Game Over");
                                 run_timeline.stop();
-
+                                Timeline fall_timeline = new Timeline();
+                                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.rotateProperty(), 300)));
+                                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.layoutYProperty(), 600)));
+                                fall_timeline.play();
+                            }
+                            if(gameController.ischerrypresent){
+                                if(gameController.flipped && gameController.Player.getLayoutX()>=gameController.cherry.getLayoutX() && gameController.Player.getLayoutX()<= gameController.cherry.getLayoutX()+gameController.cherry.getFitWidth()){
+                                    System.out.println("cherry collected");
+                                    gameController.collect_cherry();
+                                }
                             }
 
 
@@ -135,6 +166,7 @@ public class GameLogic {
 
                     loop_timeline_1.setCycleCount(1); // Set to 1 for one-time execution
                     run_timeline.setOnFinished(event1 -> {
+                        gameController.scoreUpdate();
                         loop_timeline_1.play();
                     });
 
@@ -159,6 +191,9 @@ public class GameLogic {
                         temp=gameController.first_pillar;
                         gameController.first_pillar=gameController.second_pillar;
                         gameController.second_pillar=temp;
+                        gameController.cherry.setLayoutX(106);
+                        gameController.cherry.setLayoutY(139);
+                        gameController.cherry.setOpacity(0);
 //                        System.out.println(gameController.first_pillar.getLayoutX());
 
                         gameController.second_pillar=gameController.initial_pillar_setup(gameController.second_pillar);
@@ -173,11 +208,10 @@ public class GameLogic {
                         gameController.stick.setLayoutY(405);
                         gameController.stick.setLayoutX(46);
                         gameController.stick.setRotate(0);
-                        gameController.cherry.setOpacity(1);
                         gameController.spawncherry();
                         if(gameController.ischerrypresent){
                             Random random=new Random();
-                                double cherry_coord = random.nextDouble(70, gameController.second_pillar.getLayoutX());
+                                double cherry_coord = random.nextDouble(70, gameController.second_pillar.getLayoutX()-gameController.cherry.getFitWidth());
                                 gameController.cherry.setLayoutX(cherry_coord);
                                 gameController.cherry.setLayoutY(406);
                                 gameController.cherry.setOpacity(1);

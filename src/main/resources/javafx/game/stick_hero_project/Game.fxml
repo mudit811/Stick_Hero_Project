@@ -41,16 +41,16 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="54.0" prefHeight="51.0" prefWidth="96.0" text="4">
+      <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="54.0" prefHeight="51.0" prefWidth="96.0" text="0">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="14.0" prefHeight="29.0" prefWidth="50.0" text="13" />
+      <Label fx:id="cherries" alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="14.0" prefHeight="29.0" prefWidth="50.0" text="10" />
       <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" opacity="0.0" prefHeight="600.0" prefWidth="335.0" text="Button" visible="false" />
       <ImageView fx:id="cherry" fitHeight="30.0" fitWidth="28.0" layoutX="106.0" layoutY="139.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../assets/cherry.png" />
+            <Image url="file:D:\Programs\Java Programs\Stick_Hero_Project\src\assets\cherry.png "/>
          </image>
       </ImageView>
       <ImageView fx:id="sun" fitHeight="117.0" fitWidth="109.0" layoutX="-9.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
