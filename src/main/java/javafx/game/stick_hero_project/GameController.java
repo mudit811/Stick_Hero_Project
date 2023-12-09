@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
     public static GameLogic gameLogic;
+    public  Timeline timeline;
     public ImageView Player;
 //    private Scene root;
     public Rectangle second_pillar;
@@ -80,7 +81,9 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        gameLogic = new GameLogic(this);
+        timeline=new Timeline();
+        gameLogic = new GameLogic(this,timeline);
+
     }
     public void fall(double endpoint){
 
@@ -90,20 +93,23 @@ public class GameController implements Initializable {
         Player.setLayoutX(Player.getLayoutX()+1);
     }
     public void safe_run(){}
-    public void player_fate(){
+    double stick_endpoint;
+    double pillar_end;
+    public boolean player_fate(){
         double stick_length= stick.getHeight();
         System.out.println(stick_length);
-        double stick_endpoint= 47+stick_length;
+        stick_endpoint= 47+stick_length;
         System.out.println(stick_endpoint+ " "+next_pillar_xcoord+" "+next_pillar_width);
         if (stick_endpoint<next_pillar_xcoord || stick_endpoint > next_pillar_xcoord+next_pillar_width){
 
             System.out.println("not safe");
+            return false;
 //            TranslateTransition transition= new TranslateTransition();
 //            transition.setNode(Player);
 //            transition.setDuration(Duration.millis(1000));
 //            transition.setToX(stick_endpoint);
 
-            Player.setLayoutX(stick_endpoint);
+
 //            for (int i = 0; i < (int)(stick_endpoint); i++) {
 //                Timeline timeline=new Timeline();
 //                KeyFrame keyFrame = new KeyFrame(Duration.millis(i * Duration.millis(10).toMillis()), sevent -> {
@@ -114,11 +120,13 @@ public class GameController implements Initializable {
         }
         else {
             System.out.println("safe");
+            pillar_end=next_pillar_width+next_pillar_xcoord-Player.getFitWidth();
+            return true;
 //            TranslateTransition transition= new TranslateTransition();
 //            transition.setNode(Player);
 //            transition.setDuration(Duration.millis(1000));
 //            transition.setToX(next_pillar_width+next_pillar_xcoord-Player.getFitWidth());
-            Player.setLayoutX(next_pillar_width+next_pillar_xcoord-Player.getFitWidth());
+
 //            safe_run();
         }
 

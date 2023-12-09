@@ -14,18 +14,11 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Home {
-    @FXML
-    private Label welcomeText;
 
     @FXML
     private Rectangle stick;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
 
-
-    }
     public void loadgame(ActionEvent event) throws IOException {
         Stage stage;
         Parent root;
