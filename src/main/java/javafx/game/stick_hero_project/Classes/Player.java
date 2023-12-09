@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Player implements Serializable {
     private static Player instance = null;
 
-    public Player(int cherries, int high_score,int score) {
+    private Player(int cherries, int high_score,int score) {
         this.cherries = cherries;
         this.high_score = high_score;
         this.score=score;
@@ -65,7 +65,7 @@ public class Player implements Serializable {
             i.printStackTrace();
         }
     }
-    public void deserialize(){
+    public static void deserialize(){
         File file = new File("player.ser");
         if(file.exists() && !file.isDirectory()) {
             try {
@@ -81,7 +81,11 @@ public class Player implements Serializable {
                 c.printStackTrace();
             }
         } else {
-            System.out.println("File does not exist");
+            Player.getInstance(0,0,0);
         }
+    }
+    @Serial
+    protected Object readResolve(){
+        return getInstance(0,0,0);
     }
 }

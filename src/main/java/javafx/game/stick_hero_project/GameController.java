@@ -90,7 +90,7 @@ public class GameController implements Initializable {
         cherry.setLayoutY(139);
         cherry.setOpacity(0);
         int a = random.nextInt(1, 10);
-        ischerrypresent = a >= 1;
+        ischerrypresent = a >= 6;
     }
 
 
