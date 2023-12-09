@@ -11,21 +11,21 @@
    <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
       <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/grid.jpg" />
    </ImageView>
-   <Button layoutX="253.0" layoutY="512.0" mnemonicParsing="false">
+   <Button layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-about-150.png" />
          </ImageView>
       </graphic>
    </Button>
-   <Button layoutX="253.0" layoutY="435.0" mnemonicParsing="false">
+   <Button layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors">
       <graphic>
-         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" >
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-rainmeter-128.png" />
          </ImageView>
       </graphic>
    </Button>
-   <Button layoutX="22.0" layoutY="512.0" mnemonicParsing="false">
+   <Button layoutX="22.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadShop">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/shopping-cart.png" />
