@@ -217,6 +217,7 @@ public class GameController implements Initializable {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("GameOver.fxml")));
         stage=(Stage)pane.getScene().getWindow();
         scene=new Scene(root);
+
         stage.setScene(scene);
 
         stage.show();
