@@ -1,19 +1,35 @@
-package Classes;
+package javafx.game.stick_hero_project.Classes;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class Player implements Serializable {
     private static Player instance = null;
-    public static Player getInstance(){
+
+    public Player(int cherries, int high_score,int score) {
+        this.cherries = cherries;
+        this.high_score = high_score;
+        this.score=score;
+    }
+
+    public static Player getInstance(int cherries,int high_score ,int score){
         if(instance == null){
-            instance = new Player();
+            instance = new Player(cherries,high_score,score);
         }
         return instance;
     }
-    private int cherries;
-    private int high_score;
-    private String name;
+    private int cherries=0;
+    private int high_score=0;
+    private int score;
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     private ArrayList<String> colors=new ArrayList<>();
     public int getCherries() {
         return cherries;
@@ -29,14 +45,6 @@ public class Player implements Serializable {
 
     public void setHigh_score(int high_score) {
         this.high_score = high_score;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
     public ArrayList<String> getColors() {
         return colors;

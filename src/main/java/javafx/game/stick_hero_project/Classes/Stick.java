@@ -1,7 +1,6 @@
-package Classes;
+package javafx.game.stick_hero_project.Classes;
 
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;

@@ -1,4 +1,4 @@
-package Classes;
+package javafx.game.stick_hero_project.Classes;
 
 public class Tower implements Gameobject{
     int width;

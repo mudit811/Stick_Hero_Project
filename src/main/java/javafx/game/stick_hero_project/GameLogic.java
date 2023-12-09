@@ -1,14 +1,12 @@
 package javafx.game.stick_hero_project;
 
-import Classes.Player;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.game.stick_hero_project.Classes.Player;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.StrokeType;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -18,6 +16,7 @@ import java.util.Random;
 
 public class GameLogic {
     GameController gameController;
+    GameOver gameOverController;
     Timeline timeline;
 
     public GameLogic(GameController gameController) {
@@ -33,6 +32,13 @@ public class GameLogic {
             gameController.extend();
 //            extend();
         }
+    }
+    public void start_player(){
+        gameController.player= javafx.game.stick_hero_project.Classes.Player.getInstance(Integer.parseInt( gameController.cherries.getText()),0,0);
+
+    }
+    public void set_cherries(){
+        gameController.cherries.setText(""+gameController.player.getCherries());
     }
 
     public void keyboard_release(KeyEvent event) {

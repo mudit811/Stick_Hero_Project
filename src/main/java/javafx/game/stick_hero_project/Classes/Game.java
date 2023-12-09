@@ -1,4 +1,4 @@
-package Classes;
+package javafx.game.stick_hero_project.Classes;
 
 import java.util.List;
 
