@@ -13,33 +13,33 @@
       <URL value="@style.css" />
    </stylesheets>
    <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
-      <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/grid.jpg" />
+      <Image url="grid.jpg" />
    </ImageView>
    <Button fx:id="aboutButton" layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-about-150.png" />
+            <Image url="icons8-about-150.png" />
          </ImageView>
       </graphic>
    </Button>
    <Button fx:id="colorButton" layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-rainmeter-128.png" />
+            <Image url="icons8-rainmeter-128.png" />
          </ImageView>
       </graphic>
    </Button>
    <Button fx:id="shopButton" layoutX="22.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadShop">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/shopping-cart.png" />
+            <Image url="shopping-cart.png" />
          </ImageView>
       </graphic>
    </Button>
    <Button layoutX="22.0" layoutY="435.0" mnemonicParsing="false">
       <graphic>
          <ImageView fx:id="soundButton" fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-sound-50.png" />
+            <Image url="icons8-sound-50.png" />
          </ImageView>
       </graphic>
    </Button>
@@ -49,7 +49,7 @@
       </font>
    </Text>
    <ImageView fitHeight="419.0" fitWidth="150.0" layoutX="96.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/final_pencil.png" />
+      <Image url="final_pencil.png" />
    </ImageView>
    <Button layoutX="123.0" layoutY="193.0" mnemonicParsing="false" onAction="#loadgame" opacity="0.0" prefHeight="406.0" prefWidth="90.0" text="Button" />
 </AnchorPane>
