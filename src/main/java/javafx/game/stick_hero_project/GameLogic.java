@@ -42,7 +42,10 @@ public class GameLogic {
             timeline.setCycleCount(1); // Set to 1 for one-time execution
             timeline.play();
             gameController.adjust();
+            gameController.will_not_fall();
+//            timeline.setOnFinished(event1 -> {  });
             Timeline run_timeline = new Timeline();
+
             boolean fate = gameController.player_fate();
             if (!fate) {
                 //Player falls
@@ -51,8 +54,8 @@ public class GameLogic {
                     run_timeline.play();
                 });
                 Timeline fall_timeline = new Timeline();
-                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1000), new KeyValue(gameController.Player.rotateProperty(), 300)));
-                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1000), new KeyValue(gameController.Player.layoutYProperty(), 600)));
+                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.rotateProperty(), 300)));
+                fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.layoutYProperty(), 600)));
                 run_timeline.setOnFinished(event1 -> {
                     fall_timeline.play();
                 });
@@ -60,6 +63,7 @@ public class GameLogic {
             else{
                 run_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue (gameController.Player.layoutXProperty(), gameController.pillar_end)));
                 timeline.setOnFinished(event1->{run_timeline.play();});
+
 
 
             }

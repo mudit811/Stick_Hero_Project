@@ -74,10 +74,11 @@ public class GameController implements Initializable {
     public void adjust() {
         if (canfall){
             stick.setLayoutY(stick.getLayoutY() - 1);
-
             rotated = 0;
         }
     }
+    public void will_fall(){canfall=true;}
+    public void will_not_fall(){canfall=false;}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
