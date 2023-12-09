@@ -6,6 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.game.stick_hero_project.GameOver">
    <children>
@@ -29,43 +30,39 @@
             <Font name="Cheveuxdange" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="138.0" layoutY="186.0" prefHeight="52.0" prefWidth="58.0" text="60" textOverrun="CLIP" wrapText="true">
+      <Label fx:id="highscoreLabel" layoutX="138.0" layoutY="186.0" prefHeight="52.0" prefWidth="58.0" text="60" textOverrun="CLIP" wrapText="true">
          <font>
             <Font name="Cheveuxdange" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="138.0" layoutY="268.0" prefHeight="52.0" prefWidth="58.0" text="60" textOverrun="CLIP" wrapText="true">
+      <Label fx:id="scoreLabel" layoutX="138.0" layoutY="268.0" prefHeight="52.0" prefWidth="58.0" text="60" textOverrun="CLIP" wrapText="true">
          <font>
             <Font name="Cheveuxdange" size="40.0" />
          </font>
       </Label>
-      <Button layoutX="90.0" layoutY="378.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="0.0">
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../assets/icons8-sound-50.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button layoutX="90.0" layoutY="448.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="0.0">
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../assets/icons8-about-150.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button layoutX="172.0" layoutY="448.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="0.0">
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
-      <Button layoutX="172.0" layoutY="378.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="0.0">
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-         </graphic>
-      </Button>
+      <Button fx:id="homeButton" layoutX="54.0" layoutY="378.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" visible="false" />
+      <Text layoutX="63.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOME">
+         <font>
+            <Font name="Cheveuxdange" size="27.0" />
+         </font>
+      </Text>
+      <Button fx:id="aboutButton" layoutX="168.0" layoutY="378.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" visible="false" />
+      <Text layoutX="175.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ABOUT">
+         <font>
+            <Font name="Cheveuxdange" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="reviveButton" layoutX="168.0" layoutY="445.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" visible="false" />
+      <Text layoutX="172.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REVIVE">
+         <font>
+            <Font name="Cheveuxdange" size="23.0" />
+         </font>
+      </Text>
+      <Button fx:id="soundButton" layoutX="54.0" layoutY="445.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" visible="false" />
+      <Text layoutX="62.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SOUND">
+         <font>
+            <Font name="Cheveuxdange" size="23.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
