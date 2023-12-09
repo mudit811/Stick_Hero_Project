@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<?import java.net.URL?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.game.stick_hero_project.Home">
    <stylesheets>
       <URL value="@style.css" />
@@ -15,21 +15,21 @@
    <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
       <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/grid.jpg" />
    </ImageView>
-   <Button layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout" fx:id="aboutButton">
+   <Button fx:id="aboutButton" layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-about-150.png" />
          </ImageView>
       </graphic>
    </Button>
-   <Button layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors" fx:id="colorButton">
+   <Button fx:id="colorButton" layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors">
       <graphic>
-         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" >
+         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-rainmeter-128.png" />
          </ImageView>
       </graphic>
    </Button>
-   <Button layoutX="22.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadShop" fx:id="shopButton">
+   <Button fx:id="shopButton" layoutX="22.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadShop">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/shopping-cart.png" />
@@ -38,16 +38,16 @@
    </Button>
    <Button layoutX="22.0" layoutY="435.0" mnemonicParsing="false">
       <graphic>
-         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" fx:id="soundButton">
+         <ImageView fx:id="soundButton" fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-sound-50.png" />
          </ImageView>
       </graphic>
    </Button>
-   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="6.0" prefHeight="114.0" prefWidth="328.0" text="Stick Hero" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+   <Text layoutX="96.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stick Hero" wrappingWidth="135.12945556640625">
       <font>
-         <Font size="45.0" />
+         <Font name="Cheveuxdange" size="54.0" />
       </font>
-   </Label>
+   </Text>
    <ImageView fitHeight="419.0" fitWidth="150.0" layoutX="96.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
       <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/final_pencil.png" />
    </ImageView>
