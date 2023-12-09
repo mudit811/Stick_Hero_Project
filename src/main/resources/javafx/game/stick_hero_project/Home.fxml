@@ -7,7 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import java.net.URL?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.game.stick_hero_project.Home">
+   <stylesheets>
+      <URL value="@../../../style/style.css" />
+   </stylesheets>
    <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
       <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/grid.jpg" />
    </ImageView>
