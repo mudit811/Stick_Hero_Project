@@ -14,11 +14,15 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../assets/grid.jpg" />
+            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/main/assets/grid.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="20.0" layoutX="25.0" layoutY="387.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="20.0" />
-      <Rectangle fx:id="stick" arcWidth="1.0" fill="#00020d" height="1.0" layoutX="46.0" layoutY="405.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="4.0" />
+      <Rectangle fx:id="stick" arcWidth="1.0" fill="#00020d" height="1.0" layoutX="46.0" layoutY="405.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+      <ImageView fx:id="Player" fitHeight="20.0" fitWidth="20.0" layoutX="25.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:\Programs\Java Programs\Stick_Hero_Project\src\assets\icons8-sound-50.png" />
+         </image>
+      </ImageView>
       <Rectangle fx:id="Starting_pillar" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
          <effect>
             <DropShadow height="16.28" radius="5.8675" width="9.19">
@@ -28,7 +32,7 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" layoutX="168.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
+      <Rectangle fx:id="second_pillar" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" layoutX="168.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
          <effect>
             <DropShadow height="16.28" radius="5.8675" width="9.19">
                <color>

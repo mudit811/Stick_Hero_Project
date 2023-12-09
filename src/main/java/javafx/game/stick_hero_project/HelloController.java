@@ -34,7 +34,10 @@ public class HelloController {
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
+        GameController.gameLogic.pillar_setup();
+
         scene.setOnKeyPressed(GameController.gameLogic::keyboard_mapper);
+        scene.setOnKeyReleased(GameController.gameLogic::keyboard_release);
         stage.show();
     }
 
