@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,43 +14,34 @@
       <URL value="@style.css" />
    </stylesheets>
    <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
-      <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/grid.jpg" />
+      <Image url="@../../../../../assets/grid.jpg" />
    </ImageView>
-   <Button fx:id="aboutButton" layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout">
-      <graphic>
-         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-about-150.png" />
-         </ImageView>
-      </graphic>
-   </Button>
-   <Button fx:id="colorButton" layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors">
-      <graphic>
-         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-rainmeter-128.png" />
-         </ImageView>
-      </graphic>
-   </Button>
-   <Button fx:id="shopButton" layoutX="22.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadShop">
-      <graphic>
-         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/shopping-cart.png" />
-         </ImageView>
-      </graphic>
-   </Button>
-   <Button layoutX="22.0" layoutY="435.0" mnemonicParsing="false">
-      <graphic>
-         <ImageView fx:id="soundButton" fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-sound-50.png" />
-         </ImageView>
-      </graphic>
-   </Button>
-   <Text layoutX="96.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stick Hero" wrappingWidth="135.12945556640625">
+   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="253.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../../../assets/icons8-about-150.png" />
+   </ImageView>
+   <Button fx:id="aboutButton" layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="515.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../../../assets/shopping-cart.png" />
+   </ImageView>
+   <Button fx:id="shopButton" layoutX="25.0" layoutY="515.0" mnemonicParsing="false" onAction="#loadShop" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+   <ImageView fx:id="soundButton" fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../../../assets/icons8-sound-50.png" />
+   </ImageView>
+   <Button layoutX="22.0" layoutY="435.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+   <Text layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stick Hero" textAlignment="CENTER" wrappingWidth="334.9999999999999">
       <font>
-         <Font name="Cheveuxdange" size="54.0" />
+         <Font name="Cheveuxdange" size="60.0" />
       </font>
+      <effect>
+         <DropShadow height="15.5" radius="5.875" width="10.0" />
+      </effect>
    </Text>
    <ImageView fitHeight="419.0" fitWidth="150.0" layoutX="96.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/final_pencil.png" />
+      <Image url="@../../../../../assets/final_pencil.png" />
    </ImageView>
+   <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="253.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../../../../assets/icons8-rainmeter-128.png" />
+   </ImageView>
+   <Button fx:id="colorButton" layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
    <Button layoutX="123.0" layoutY="193.0" mnemonicParsing="false" onAction="#loadgame" opacity="0.0" prefHeight="406.0" prefWidth="90.0" text="Button" />
 </AnchorPane>
