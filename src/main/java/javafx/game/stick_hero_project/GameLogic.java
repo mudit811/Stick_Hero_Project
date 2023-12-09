@@ -8,7 +8,7 @@ import javafx.util.Duration;
 
 import java.util.Random;
 
-import static com.sun.javafx.animation.TickCalculation.toMillis;
+//import static com.sun.javafx.animation.TickCalculation.toMillis;
 
 public class GameLogic {
     GameController gameController;

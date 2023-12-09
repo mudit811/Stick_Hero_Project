@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class HelloController {
+public class Home {
     @FXML
     private Label welcomeText;
 
