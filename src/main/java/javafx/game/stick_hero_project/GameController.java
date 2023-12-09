@@ -191,13 +191,8 @@ public class GameController implements Initializable {
 
 
     }
-    public void pause(){
-        timeline.pause();
-        anchorPane.getChildren().get(0).setVisible(true);
-    }
 
     public void scoreUpdate(){
         score.setText(String.valueOf(Integer.parseInt(score.getText())+1));
     }
-
 }
