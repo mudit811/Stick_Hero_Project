@@ -11,21 +11,21 @@
    <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
       <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/grid.jpg" />
    </ImageView>
-   <Button layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout">
+   <Button layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout" fx:id="aboutButton">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-about-150.png" />
          </ImageView>
       </graphic>
    </Button>
-   <Button layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors">
+   <Button layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors" fx:id="colorButton">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" >
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-rainmeter-128.png" />
          </ImageView>
       </graphic>
    </Button>
-   <Button layoutX="22.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadShop">
+   <Button layoutX="22.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadShop" fx:id="shopButton">
       <graphic>
          <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/shopping-cart.png" />
@@ -34,7 +34,7 @@
    </Button>
    <Button layoutX="22.0" layoutY="435.0" mnemonicParsing="false">
       <graphic>
-         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="44.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" fx:id="soundButton">
             <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/assets/icons8-sound-50.png" />
          </ImageView>
       </graphic>
