@@ -1,5 +1,6 @@
 package javafx.game.stick_hero_project;
 
+import javafx.animation.AnimationTimer;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,6 +25,18 @@ public class GameController implements Initializable {
     boolean movement = true;
     double stick_endpoint;
     double pillar_end;
+    boolean canflip;
+    boolean flipped=false;
+//    public AnimationTimer tower_colision= new AnimationTimer() {
+//        @Override
+//        public void handle(long l) {
+//            check_tower_collision(second_pillar, Player);
+//        }
+//    };
+    public void check_tower_collision(Rectangle r, ImageView player){
+
+
+    }
     @FXML
     public Rectangle first_pillar;
     @FXML
@@ -108,7 +121,6 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        timeline = new Timeline();
         gameLogic = new GameLogic(this);
 
     }

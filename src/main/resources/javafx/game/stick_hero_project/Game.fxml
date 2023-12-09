@@ -48,6 +48,5 @@
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="14.0" prefHeight="29.0" prefWidth="50.0" text="13" />
       <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" opacity="0.0" prefHeight="600.0" prefWidth="335.0" text="Button" visible="false" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="51.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
    </children>
 </AnchorPane>

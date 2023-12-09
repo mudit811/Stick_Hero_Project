@@ -28,7 +28,6 @@ public class Home {
         scene=new Scene(root);
         stage.setScene(scene);
         GameController.gameLogic.pillar_setup();
-        GameController.gameLogic.gameController.default_stick=GameController.gameLogic.gameController.stick;
         scene.setOnKeyPressed(GameController.gameLogic::keyboard_mapper);
         scene.setOnKeyReleased(GameController.gameLogic::keyboard_release);
         stage.show();

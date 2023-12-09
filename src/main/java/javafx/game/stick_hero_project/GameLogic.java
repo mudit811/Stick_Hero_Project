@@ -1,5 +1,6 @@
 package javafx.game.stick_hero_project;
 
+import Classes.Player;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -49,9 +50,9 @@ public class GameLogic {
                 timeline.setCycleCount(1); // Set to 1 for one-time execution
                 timeline.play();
                 gameController.adjust();
-                timeline.setOnFinished(event2 -> {
-                    gameController.will_not_fall();
-                });
+//                timeline.setOnFinished(event2 -> {
+//                    gameController.will_not_fall();
+//                });
 
 
                 Timeline run_timeline = new Timeline();
@@ -59,9 +60,22 @@ public class GameLogic {
                 boolean fate = gameController.player_fate();
                 if (!fate) {
                     //Player falls
-                    run_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(750), new KeyValue(gameController.Player.layoutXProperty(), gameController.stick_endpoint)));
+                    gameController.canflip=true;
+                    int walk_distance=(int)gameController.stick_endpoint-(int)gameController.Player.getLayoutX();
+                    for (int i = 0; i <walk_distance; i++) {
+                        KeyFrame keyFrame = new KeyFrame(Duration.millis(i * Duration.millis(5).toMillis()), sevent -> {
+                            // Call your function here
+                            gameController.Player_move_forward();
+
+                        });
+                        run_timeline.getKeyFrames().add(keyFrame);
+
+                    }
+
+//                    run_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1500), new KeyValue(gameController.Player.layoutXProperty(), gameController.stick_endpoint)));
                     timeline.setOnFinished(event1 -> {
                         run_timeline.play();
+//                        gameController.Player.setLayoutX(gameController.stick_endpoint);
                     });
                     Timeline fall_timeline = new Timeline();
                     fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.rotateProperty(), 300)));
@@ -70,10 +84,40 @@ public class GameLogic {
                         fall_timeline.play();
                     });
                 } else {
+                    gameController.canflip=true;
                     //player survives
-                    run_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.layoutXProperty(), gameController.pillar_end)));
+//                    run_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1500), new KeyValue(gameController.Player.layoutXProperty(), gameController.pillar_end)));
+                    int walk_distance=(int)gameController.pillar_end-(int)gameController.Player.getLayoutX();
+                    boolean b=false;
+
+                    for (int i = 0; i <walk_distance; i++) {
+                        KeyFrame keyFrame = new KeyFrame(Duration.millis(i * Duration.millis(5).toMillis()), sevent -> {
+                            // Call your function here
+                            gameController.Player_move_forward();
+                            if(gameController.Player.getLayoutX()>gameController.getNext_pillar_xcoord() || gameController.Player.getLayoutX()<50){
+                                gameController.canflip=false;
+                            }
+                            else{
+                                gameController.canflip=true;
+                            }
+                            if(gameController.flipped && gameController.Player.getLayoutX()>=gameController.getNext_pillar_xcoord()){
+                                System.out.println("Game Over");
+                                run_timeline.stop();
+
+                            }
+
+
+                        });
+
+                        if(b){
+                            break;
+                        }
+                        run_timeline.getKeyFrames().add(keyFrame);
+
+                    }
                     timeline.setOnFinished(event1 -> {
                         run_timeline.play();
+//                        gameController.Player.setLayoutX(gameController.pillar_end);
                     });
                     Timeline loop_timeline_1 = new Timeline();
                     int loopnumber = (int) gameController.pillar_end - 25;
@@ -137,6 +181,23 @@ public class GameLogic {
 
                 }
             }
+        }
+        if (event.getCode()==KeyCode.F){
+            if (gameController.canflip){
+                gameController.Player.setScaleY(-1);
+                if(!gameController.flipped){
+                    gameController.Player.setLayoutY(gameController.Player.getLayoutY()+25);
+                }
+                else{
+                    gameController.Player.setLayoutY(gameController.Player.getLayoutY()-25);
+
+                }
+                gameController.flipped=!gameController.flipped;
+
+
+
+            }
+
         }
     }
 
