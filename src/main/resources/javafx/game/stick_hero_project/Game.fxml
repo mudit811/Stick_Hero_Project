@@ -55,7 +55,7 @@
       </ImageView>
       <ImageView fx:id="sun" fitHeight="117.0" fitWidth="109.0" layoutX="-9.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../assets/icons8-sun-240.png" />
+            <Image url="file:D:\Programs\Java Programs\Stick_Hero_Project\src\assets\icons8-sun-240.png" />
          </image>
       </ImageView>
    </children>

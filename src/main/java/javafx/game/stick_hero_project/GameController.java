@@ -2,14 +2,22 @@ package javafx.game.stick_hero_project;
 
 import javafx.animation.AnimationTimer;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -22,11 +30,8 @@ public class GameController implements Initializable {
     public Rectangle second_pillar;
     public boolean canextend = true;
     public Label score;
-<<<<<<< HEAD
     public Label cherries;
-=======
     public ImageView sun;
->>>>>>> 323ef5c4168239798732e3d41e004ce9ed493953
     double rotated = 0;
     boolean canfall = true;
     boolean movement = true;
@@ -203,6 +208,18 @@ public class GameController implements Initializable {
     }
     public void cherryUpdate(){
         cherries.setText(String.valueOf(Integer.parseInt(cherries.getText())+1));
+    }
+
+    public void game_over( AnchorPane pane) throws IOException {
+        Stage stage;
+        Parent root;
+        Scene scene;
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("GameOver.fxml")));
+        stage=(Stage)pane.getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
     }
 
 }

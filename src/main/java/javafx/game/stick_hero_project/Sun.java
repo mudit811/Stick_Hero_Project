@@ -13,7 +13,7 @@ public class Sun implements Runnable{
     public void run() {
         Timeline timelineSun= new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(sunImage.rotateProperty(),0)),
-                new KeyFrame(Duration.millis(2000),new KeyValue(sunImage.rotateProperty(),360))
+                new KeyFrame(Duration.millis(12000),new KeyValue(sunImage.rotateProperty(),360))
         );
         timelineSun.setCycleCount(Timeline.INDEFINITE);
         timelineSun.play();

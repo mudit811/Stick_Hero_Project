@@ -11,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.util.Random;
 
 //import static com.sun.javafx.animation.TickCalculation.toMillis;
@@ -81,6 +82,13 @@ public class GameLogic {
                                 fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.rotateProperty(), 300)));
                                 fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.layoutYProperty(), 600)));
                                 fall_timeline.play();
+                                fall_timeline.setOnFinished(event1 -> {
+                                    try {
+                                        gameController.game_over(gameController.anchorPane);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                });
 
 
                             }
@@ -107,6 +115,13 @@ public class GameLogic {
                     run_timeline.setOnFinished(event1 -> {
                         fall_timeline.play();
                     });
+                    fall_timeline.setOnFinished(event1 -> {
+                        try {
+                            gameController.game_over(gameController.anchorPane);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
                 } else {
                     gameController.canflip=true;
                     //player survives
@@ -131,6 +146,13 @@ public class GameLogic {
                                 fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.rotateProperty(), 300)));
                                 fall_timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), new KeyValue(gameController.Player.layoutYProperty(), 600)));
                                 fall_timeline.play();
+                                fall_timeline.setOnFinished(event1 -> {
+                                    try {
+                                        gameController.game_over(gameController.anchorPane);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                });
                             }
                             if(gameController.ischerrypresent){
                                 if(gameController.flipped && gameController.Player.getLayoutX()>=gameController.cherry.getLayoutX() && gameController.Player.getLayoutX()<= gameController.cherry.getLayoutX()+gameController.cherry.getFitWidth()){
