@@ -4,6 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
@@ -20,6 +21,7 @@ public class GameController implements Initializable {
     //    private Scene root;
     public Rectangle second_pillar;
     public boolean canextend = true;
+    public Label score;
     double rotated = 0;
     boolean canfall = true;
     boolean movement = true;
@@ -188,5 +190,9 @@ public class GameController implements Initializable {
         }
 
 
+    }
+
+    public void scoreUpdate(){
+        score.setText(String.valueOf(Integer.parseInt(score.getText())+1));
     }
 }
