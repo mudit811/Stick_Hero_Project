@@ -48,6 +48,8 @@ public class GameController implements Initializable {
     public double getNext_pillar_width() {
         return next_pillar_width;
     }
+    public ImageView cherry;
+
 
     public void setNext_pillar_width(double next_pillar_width) {
         this.next_pillar_width = next_pillar_width;
@@ -56,16 +58,32 @@ public class GameController implements Initializable {
     public double getNext_pillar_xcoord() {
         return next_pillar_xcoord;
     }
+    boolean ischerrypresent=false;
+    public void spawncherry(){
+        Random random=new Random();
+        int a =random.nextInt(1,10);
+        if (a>=6){
+            ischerrypresent=true;
+        }
+        else{
+            ischerrypresent=false;
+            cherry.setLayoutX(106);
+            cherry.setLayoutY(139);
+            cherry.setOpacity(0);
+        }
+    }
 
     public void setNext_pillar_xcoord(double next_pillar_xcoord) {
         this.next_pillar_xcoord = next_pillar_xcoord;
     }
+
 
     public Rectangle default_stick;
 
     public Rectangle getStick() {
         return stick;
     }
+
 
     public void extend() {
         if (canextend) {
@@ -85,6 +103,14 @@ public class GameController implements Initializable {
         pillar.setWidth(width);
         next_pillar_width = width;
         next_pillar_xcoord = xcoord;
+//        spawncherry();
+//
+//        if(ischerrypresent){
+//            double cherry_coord = random.nextDouble(70, xcoord);
+//            cherry.setLayoutX(cherry_coord);
+//        }
+//        System.out.println(cherry.getLayoutX());
+
         return pillar;
 
     }

@@ -11,6 +11,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.util.Duration;
 
+import java.util.Random;
+
 //import static com.sun.javafx.animation.TickCalculation.toMillis;
 
 public class GameLogic {
@@ -152,16 +154,16 @@ public class GameLogic {
                     loop_timeline_2.setCycleCount(1); // Set to 1 for one-time execution
                     loop_timeline_1.setOnFinished(event1 -> {
                         Rectangle temp=new Rectangle();
-                        System.out.println(gameController.first_pillar.getLayoutX());
-                        System.out.println(gameController.second_pillar.getLayoutX());
+//                        System.out.println(gameController.first_pillar.getLayoutX());
+//                        System.out.println(gameController.second_pillar.getLayoutX());
                         temp=gameController.first_pillar;
                         gameController.first_pillar=gameController.second_pillar;
                         gameController.second_pillar=temp;
-                        System.out.println(gameController.first_pillar.getLayoutX());
+//                        System.out.println(gameController.first_pillar.getLayoutX());
 
                         gameController.second_pillar=gameController.initial_pillar_setup(gameController.second_pillar);
                         gameController.second_pillar.setLayoutX(gameController.second_pillar.getLayoutX()+loopnumber-25);
-                        System.out.println(gameController.second_pillar.getLayoutX());
+//                        System.out.println(gameController.second_pillar.getLayoutX());
 //                        gameController.anchorPane.getChildren().add(gameController.second_pillar);
                         loop_timeline_2.play();
                     });
@@ -171,6 +173,17 @@ public class GameLogic {
                         gameController.stick.setLayoutY(405);
                         gameController.stick.setLayoutX(46);
                         gameController.stick.setRotate(0);
+                        gameController.cherry.setOpacity(1);
+                        gameController.spawncherry();
+                        if(gameController.ischerrypresent){
+                            Random random=new Random();
+                                double cherry_coord = random.nextDouble(70, gameController.second_pillar.getLayoutX());
+                                gameController.cherry.setLayoutX(cherry_coord);
+                                gameController.cherry.setLayoutY(406);
+                                gameController.cherry.setOpacity(1);
+                                System.out.println("cherry present");
+                            }
+                            System.out.println(gameController.cherry.getLayoutX());
                         gameController.movement = true;
                         gameController.canextend = true;
                         gameController.canfall = true;
