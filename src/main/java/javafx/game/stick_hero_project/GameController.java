@@ -1,14 +1,11 @@
 package javafx.game.stick_hero_project;
 
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.animation.Transition;
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.Random;
@@ -16,20 +13,42 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
     public static GameLogic gameLogic;
-    public  Timeline timeline;
+    public Timeline timeline;
     public ImageView Player;
-//    private Scene root;
+    public AnchorPane anchorPane;
+    //    private Scene root;
     public Rectangle second_pillar;
+    public boolean canextend = true;
     double rotated = 0;
+    boolean canfall = true;
+    boolean movement = true;
+    double stick_endpoint;
+    double pillar_end;
     @FXML
-    private Rectangle Starting_pillar;
+    public Rectangle first_pillar;
     @FXML
-    private Rectangle stick;
+    public Rectangle stick;
     private double pillar_height;
-    private boolean canextend = true;
-    boolean canfall=true;
     private double next_pillar_width;
     private double next_pillar_xcoord;
+
+    public double getNext_pillar_width() {
+        return next_pillar_width;
+    }
+
+    public void setNext_pillar_width(double next_pillar_width) {
+        this.next_pillar_width = next_pillar_width;
+    }
+
+    public double getNext_pillar_xcoord() {
+        return next_pillar_xcoord;
+    }
+
+    public void setNext_pillar_xcoord(double next_pillar_xcoord) {
+        this.next_pillar_xcoord = next_pillar_xcoord;
+    }
+
+    public Rectangle default_stick;
 
     public Rectangle getStick() {
         return stick;
@@ -42,17 +61,18 @@ public class GameController implements Initializable {
         }
     }
 
-    public void initial_pillar_setup() {
+    public Rectangle initial_pillar_setup(Rectangle pillar) {
         //width +x< 335
         // y layout = 404 , height = 214
         //20<width<140
         Random random = new Random();
         double width = random.nextDouble(10, 140);
         double xcoord = random.nextDouble(70, 320 - width);
-        second_pillar.setLayoutX(xcoord);
-        second_pillar.setWidth(width);
-        next_pillar_width=width;
-        next_pillar_xcoord=xcoord;
+        pillar.setLayoutX(xcoord);
+        pillar.setWidth(width);
+        next_pillar_width = width;
+        next_pillar_xcoord = xcoord;
+        return pillar;
 
     }
 
@@ -72,64 +92,63 @@ public class GameController implements Initializable {
     }
 
     public void adjust() {
-        if (canfall){
+        if (canfall) {
             stick.setLayoutY(stick.getLayoutY() - 1);
             rotated = 0;
         }
     }
-    public void will_fall(){canfall=true;}
-    public void will_not_fall(){canfall=false;}
+
+    public void will_fall() {
+        canfall = true;
+    }
+
+    public void will_not_fall() {
+        canfall = false;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        timeline=new Timeline();
-        gameLogic = new GameLogic(this,timeline);
+        timeline = new Timeline();
+        gameLogic = new GameLogic(this);
 
     }
-    public void fall(double endpoint){
+
+    public void fall(double endpoint) {
 
 
     }
-    public void Player_move_forward(){
-        Player.setLayoutX(Player.getLayoutX()+1);
-    }
-    public void safe_run(){}
-    double stick_endpoint;
-    double pillar_end;
-    public boolean player_fate(){
-        double stick_length= stick.getHeight();
-        System.out.println(stick_length);
-        stick_endpoint= 47+stick_length;
-        System.out.println(stick_endpoint+ " "+next_pillar_xcoord+" "+next_pillar_width);
-        if (stick_endpoint<next_pillar_xcoord || stick_endpoint > next_pillar_xcoord+next_pillar_width){
 
-            System.out.println("not safe");
+    public void Player_move_forward() {
+        Player.setLayoutX(Player.getLayoutX() + 1);
+    }
+
+    public void safe_run() {
+    }
+
+    public void loop() {
+        Player.setLayoutX(Player.getLayoutX() - 1);
+        stick.setLayoutX(stick.getLayoutX() - 1);
+        first_pillar.setLayoutX(first_pillar.getLayoutX() - 1);
+        second_pillar.setLayoutX(second_pillar.getLayoutX() - 1);
+    }
+
+    public boolean player_fate() {
+        double stick_length = stick.getHeight();
+//        System.out.println(stick_length);
+        stick_endpoint = 47 + stick_length;
+//        System.out.println(stick_endpoint + " " + next_pillar_xcoord + " " + next_pillar_width);
+        if (stick_endpoint < next_pillar_xcoord || stick_endpoint > next_pillar_xcoord + next_pillar_width) {
+
+//            System.out.println("not safe");
             return false;
-//            TranslateTransition transition= new TranslateTransition();
-//            transition.setNode(Player);
-//            transition.setDuration(Duration.millis(1000));
-//            transition.setToX(stick_endpoint);
-
-
-//            for (int i = 0; i < (int)(stick_endpoint); i++) {
-//                Timeline timeline=new Timeline();
-//                KeyFrame keyFrame = new KeyFrame(Duration.millis(i * Duration.millis(10).toMillis()), sevent -> {
-//                    // Call your function here
-//                    Player_move_forward();});
-//                timeline.getKeyFrames().add(keyFrame);
-//            }
-        }
-        else {
-            System.out.println("safe");
-            pillar_end=next_pillar_width+next_pillar_xcoord-Player.getFitWidth();
+//
+        } else {
+//            System.out.println("safe");
+            pillar_end = next_pillar_width + next_pillar_xcoord - Player.getFitWidth()-5;
             return true;
-//            TranslateTransition transition= new TranslateTransition();
-//            transition.setNode(Player);
-//            transition.setDuration(Duration.millis(1000));
-//            transition.setToX(next_pillar_width+next_pillar_xcoord-Player.getFitWidth());
-
-//            safe_run();
+//
         }
+
 
     }
 }

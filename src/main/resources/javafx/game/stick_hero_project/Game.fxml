@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.game.stick_hero_project.GameController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.game.stick_hero_project.GameController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
          <image>
@@ -23,7 +23,7 @@
             <Image url="file:/D:\Programs\Java Programs\Stick_Hero_Project\src\assets\icons8-sound-50.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="Starting_pillar" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
+      <Rectangle fx:id="first_pillar" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
          <effect>
             <DropShadow height="16.28" radius="5.8675" width="9.19">
                <color>
@@ -48,5 +48,6 @@
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="14.0" prefHeight="29.0" prefWidth="50.0" text="13" />
       <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" opacity="0.0" prefHeight="600.0" prefWidth="335.0" text="Button" visible="false" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="51.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" width="12.0" />
    </children>
 </AnchorPane>
