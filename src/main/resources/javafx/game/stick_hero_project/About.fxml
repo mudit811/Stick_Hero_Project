@@ -9,7 +9,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.game.stick_hero_project.About">
    <children>
       <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
@@ -25,7 +24,7 @@
             <DropShadow height="10.0" offsetX="2.0" radius="4.5" width="10.0" />
          </effect>
       </Label>
-      <Label layoutX="20.0" layoutY="113.0" prefHeight="386.0" prefWidth="294.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi aspernatur assumenda at atque culpa delectus dolor dolore ducimus ea, earum eligendi exercitationem explicabo, facere fugiat incidunt ipsam iusto libero minus molestias natus necessitatibus nihil nobis optio pariatur placeat porro quae quasi quod repellat reprehenderit repudiandae temporibus totam unde voluptas" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="20.0" layoutY="113.0" prefHeight="386.0" prefWidth="294.0" text="Greetings, fellow gamers! I'm Stick Hero, the relentless adventurer behind the pixelated prowess in Stick Hero. Embark on a journey with me as we navigate the minimalist landscape of this captivating game.Witness the adrenaline-fueled moments as I shatter records and conquer high scores." textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Cheveuxdange" size="19.0" />
          </font>
@@ -46,7 +45,7 @@
             <DropShadow height="10.0" offsetX="2.0" radius="4.5" width="10.0" />
          </effect>
       </Label>
-      <Button layoutX="122.0" layoutY="499.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="90.0">
+      <Button layoutX="122.0" layoutY="499.0" mnemonicParsing="false" onAction="#loadHome" opacity="0.0" prefHeight="40.0" prefWidth="90.0">
          <effect>
             <DropShadow />
          </effect>

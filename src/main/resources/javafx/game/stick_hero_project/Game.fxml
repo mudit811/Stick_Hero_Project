@@ -14,16 +14,16 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
          <image>
-            <Image url="file:/D:/Programs/Java%20Programs/Stick_Hero_Project/src/main/assets/grid.jpg" />
+            <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/grid.jpg" />
          </image>
       </ImageView>
       <Rectangle fx:id="stick" arcWidth="1.0" fill="#00020d" height="1.0" layoutX="46.0" layoutY="405.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
-      <ImageView fx:id="Player" fitHeight="20.0" fitWidth="20.0" layoutX="25.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Player" fitHeight="40.0" fitWidth="30.0" layoutX="25.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/D:\Programs\Java Programs\Stick_Hero_Project\src\assets\icons8-sound-50.png" />
+            <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/pencilHero.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="first_pillar" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
+      <Rectangle fx:id="first_pillar" arcHeight="5.0" arcWidth="5.0" height="200.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
          <effect>
             <DropShadow height="16.28" radius="5.8675" width="9.19">
                <color>
@@ -32,7 +32,7 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <Rectangle fx:id="second_pillar" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" layoutX="168.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
+      <Rectangle fx:id="second_pillar" arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="168.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="50.0">
          <effect>
             <DropShadow height="16.28" radius="5.8675" width="9.19">
                <color>
@@ -50,12 +50,12 @@
       <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" opacity="0.0" prefHeight="600.0" prefWidth="335.0" text="Button" visible="false" />
       <ImageView fx:id="cherry" fitHeight="30.0" fitWidth="28.0" layoutX="106.0" layoutY="139.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:D:\Programs\Java Programs\Stick_Hero_Project\src\assets\cherry.png " />
+            <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/cherry.png" />
          </image>
       </ImageView>
       <ImageView fx:id="sun" fitHeight="117.0" fitWidth="109.0" layoutX="-9.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:D:\Programs\Java Programs\Stick_Hero_Project\src\assets\icons8-sun-240.png" />
+            <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/icons8-sun-240.png" />
          </image>
       </ImageView>
    </children>

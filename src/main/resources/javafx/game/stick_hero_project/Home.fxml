@@ -10,22 +10,20 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.game.stick_hero_project.Home">
-   <stylesheets>
-      <URL value="@style.css" />
-   </stylesheets>
+
    <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true">
-      <Image url="@../../../../../assets/grid.jpg" />
+      <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/grid.jpg" />
    </ImageView>
    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="253.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../../../assets/icons8-about-150.png" />
+      <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/icons8-about-150.png" />
    </ImageView>
    <Button fx:id="aboutButton" layoutX="253.0" layoutY="512.0" mnemonicParsing="false" onAction="#loadAbout" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="515.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../../../assets/shopping-cart.png" />
+      <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/shopping-cart.png" />
    </ImageView>
    <Button fx:id="shopButton" layoutX="25.0" layoutY="515.0" mnemonicParsing="false" onAction="#loadShop" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
    <ImageView fx:id="soundButton" fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../../../assets/icons8-sound-50.png" />
+      <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/icons8-sound-50.png" />
    </ImageView>
    <Button layoutX="22.0" layoutY="435.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
    <Text layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stick Hero" textAlignment="CENTER" wrappingWidth="334.9999999999999">
@@ -37,10 +35,10 @@
       </effect>
    </Text>
    <ImageView fitHeight="419.0" fitWidth="150.0" layoutX="96.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../../../assets/final_pencil.png" />
+      <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/final_pencil.png" />
    </ImageView>
    <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="253.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@../../../../../assets/icons8-rainmeter-128.png" />
+      <Image url="file:/home/the_nice_guy/Codes/AP/Stick_Hero_Project/src/assets/icons8-rainmeter-128.png" />
    </ImageView>
    <Button fx:id="colorButton" layoutX="253.0" layoutY="435.0" mnemonicParsing="false" onAction="#loadColors" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
    <Button layoutX="123.0" layoutY="193.0" mnemonicParsing="false" onAction="#loadgame" opacity="0.0" prefHeight="406.0" prefWidth="90.0" text="Button" />

@@ -3,6 +3,8 @@ package javafx.game.stick_hero_project.Classes;
 import java.io.*;
 import java.util.ArrayList;
 
+import static java.lang.Math.max;
+
 public class Player implements Serializable {
     private static Player instance = null;
 
@@ -44,48 +46,12 @@ public class Player implements Serializable {
     }
 
     public void setHigh_score(int high_score) {
-        this.high_score = high_score;
+        this.high_score = max(high_score,this.high_score);
     }
     public ArrayList<String> getColors() {
         return colors;
     }
     public void addColor(String color){
         colors.add(color);
-    }
-
-    public void serialize(){
-        FileOutputStream fileOut = null;
-        try {
-            fileOut = new FileOutputStream("player.ser");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(this);
-            out.close();
-            fileOut.close();
-        } catch (IOException i) {
-            i.printStackTrace();
-        }
-    }
-    public static void deserialize(){
-        File file = new File("player.ser");
-        if(file.exists() && !file.isDirectory()) {
-            try {
-                FileInputStream fileIn = new FileInputStream("player.ser");
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                instance = (Player) in.readObject();
-                in.close();
-                fileIn.close();
-            } catch (IOException i) {
-                i.printStackTrace();
-            } catch (ClassNotFoundException c) {
-                System.out.println("Player class not found");
-                c.printStackTrace();
-            }
-        } else {
-            Player.getInstance(0,0,0);
-        }
-    }
-    @Serial
-    protected Object readResolve(){
-        return getInstance(0,0,0);
     }
 }

@@ -9,6 +9,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
@@ -35,6 +37,16 @@ public class GameLogic {
     }
     public void start_player(){
         gameController.player= javafx.game.stick_hero_project.Classes.Player.getInstance(Integer.parseInt( gameController.cherries.getText()),0,0);
+        try (BufferedReader reader = new BufferedReader(new FileReader("player.txt"))) {
+            String score = reader.readLine();
+            String highScore = reader.readLine();
+            String cherries = reader.readLine();
+            gameController.player.setScore(Integer.parseInt(score));
+            gameController.player.setHigh_score(Integer.parseInt(highScore));
+            gameController.player.setCherries(Integer.parseInt(cherries));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
     public void set_cherries(){

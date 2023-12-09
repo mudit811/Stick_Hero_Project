@@ -165,6 +165,7 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         int[] readNumbers = readIntegersFromFile("revive.txt");
         gameLogic = new GameLogic(this);
         Sun sun = new Sun(this.sun);
