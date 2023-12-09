@@ -22,6 +22,7 @@ public class GameController implements Initializable {
     public Rectangle second_pillar;
     public boolean canextend = true;
     public Label score;
+    public Label cherries;
     double rotated = 0;
     boolean canfall = true;
     boolean movement = true;
@@ -63,15 +64,16 @@ public class GameController implements Initializable {
     boolean ischerrypresent=false;
     public void spawncherry(){
         Random random=new Random();
+        cherry.setLayoutX(106);
+        cherry.setLayoutY(139);
+        cherry.setOpacity(0);
         int a =random.nextInt(1,10);
-        if (a>=6){
+        if (a>=1){
             ischerrypresent=true;
         }
         else{
             ischerrypresent=false;
-            cherry.setLayoutX(106);
-            cherry.setLayoutY(139);
-            cherry.setOpacity(0);
+
         }
     }
 
@@ -93,6 +95,13 @@ public class GameController implements Initializable {
             stick.setHeight(stick.getHeight() + 5);
         }
     }
+    public void collect_cherry(){
+        cherry.setLayoutX(106);
+        cherry.setLayoutY(139);
+        cherry.setOpacity(0);
+        ischerrypresent=false;
+        cherryUpdate();
+    }
 
     public Rectangle initial_pillar_setup(Rectangle pillar) {
         //width +x< 335
@@ -105,14 +114,6 @@ public class GameController implements Initializable {
         pillar.setWidth(width);
         next_pillar_width = width;
         next_pillar_xcoord = xcoord;
-//        spawncherry();
-//
-//        if(ischerrypresent){
-//            double cherry_coord = random.nextDouble(70, xcoord);
-//            cherry.setLayoutX(cherry_coord);
-//        }
-//        System.out.println(cherry.getLayoutX());
-
         return pillar;
 
     }
@@ -195,4 +196,8 @@ public class GameController implements Initializable {
     public void scoreUpdate(){
         score.setText(String.valueOf(Integer.parseInt(score.getText())+1));
     }
+    public void cherryUpdate(){
+        cherries.setText(String.valueOf(Integer.parseInt(cherries.getText())+1));
+    }
+
 }
