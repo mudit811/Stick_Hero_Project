@@ -22,6 +22,7 @@ public class GameController implements Initializable {
     public Rectangle second_pillar;
     public boolean canextend = true;
     public Label score;
+    public ImageView sun;
     double rotated = 0;
     boolean canfall = true;
     boolean movement = true;
@@ -150,7 +151,9 @@ public class GameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         gameLogic = new GameLogic(this);
-
+        Sun sun = new Sun(this.sun);
+        Thread sunThread = new Thread(sun);
+        sunThread.start();
     }
 
     public void fall(double endpoint) {
@@ -191,7 +194,6 @@ public class GameController implements Initializable {
 
 
     }
-
     public void scoreUpdate(){
         score.setText(String.valueOf(Integer.parseInt(score.getText())+1));
     }
