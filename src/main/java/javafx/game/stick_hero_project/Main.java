@@ -14,7 +14,6 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 335, 600);
         stage.setTitle("Stick Hero");
         stage.setScene(scene);
-//        scene.setOnKeyPressed(GameController.gameLogic::keyboard_mapper);
         stage.show();
     }
 
